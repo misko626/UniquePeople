@@ -8,65 +8,109 @@
     margin: auto;
     // background-color: red;
     min-height: 680px;
-    padding: 70px 0 70px 100px;
+    padding: 70px 30px 70px 100px;
     position: relative;
 
-    .arrows{
-        position: absolute;
-        bottom: 100px;
-        right: 100px;
+    @include extra-large {
+      width: 95%;
     }
 
-    .profile-heading{
-
-        h2{
-            color: #0C2533;
-            font-size: 45px;
-            font-family: 'nunito-bold';
-            max-width: 470px;
-            margin-bottom: 50px;
-        }
-        
+    @include large {
+      padding: 70px 20px 70px 20px;
     }
 
-    .profile-content{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-right: 100px;
+    .arrows {
+      position: absolute;
+      bottom: 100px;
+      right: 100px;
 
-        .profile-img-content{
-            img{
-                
-                margin-bottom: 20px;
-            }
+      @include large {
+        bottom: 50px;
+        right: 50%;
+        transform: translate(+50%);
+      }
+    }
 
-            h4{
-                font-size: 24px;
-                font-family: 'nunito-extra-bold';
-            }
+    .profile-heading {
+      display: flex;
+      justify-content: center;
+      h2 {
+        text-align: center;
+        color: #0c2533;
+        font-size: 45px;
+        font-family: "nunito-bold";
+        max-width: 470px;
+        margin-bottom: 50px;
 
-            p{
-                font-size: 16px;
-            }
+        @include large {
+          max-width: 600px;
         }
 
-        .profile-text-content{
-            position: relative;
-            width: 63%;
-            font-size: 20px;
-            line-height: 36px;
-            font-family: 'nunito-bold';
-            margin-bottom: 5%;
-            padding: 10px;
-
-            img{
-                position: absolute;
-                top: -30px;
-                right: -110px;
-            }
+        @include mobile {
+          font-size: 35px;
         }
+      }
+    }
+
+    .profile-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-right: 100px;
+
+      @include large {
+        flex-direction: column;
+        padding: 50px;
+      }
+
+      @include mobile {
+        padding: 0;
+      }
+
+      .profile-img-content {
+        img {
+          margin-bottom: 20px;
+        }
+
+        h4 {
+          font-size: 24px;
+          font-family: "nunito-extra-bold";
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .profile-text-content {
+        position: relative;
+        width: 67%;
+        font-size: 20px;
+        line-height: 36px;
+        font-family: "nunito-bold";
+
+        margin-bottom: 5%;
+        padding: 10px;
+
+        @include large {
+          width: 90%;
+          margin-top: 30px;
+        }
+
+        @include tablet {
+          width: 100%;
+          font-size: 18px;
+          padding: 0px;
+        }
+
+        img {
+          position: absolute;
+          top: -30px;
+          right: -80px;
+          width: 64px;
+        }
+      }
     }
   }
 }

@@ -15,20 +15,37 @@
   </head>
   <body>
     <header class="header">
-      <nav class="nav-bar">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="#"> Home</a></li>
-          <li class="nav-item"><a href="#"> Pages</a></li>
-          <li class="nav-item"><a href="#"> Portfolio</a></li>
-          <li class="nav-item"><a href="#"> Blog</a></li>
-          <li class="nav-item">
-            <a href="#"> <img src="./assets/img/search-icon.svg" alt="" /></a>
-          </li>
-        </ul>
-      </nav>
+      <img
+        class="menu-icon"
+        src="./assets/img/icons8-menu.svg"
+        alt="Menu"
+        title="menu"
+        onclick="onClickMenu()"
+      />
+      <div id="navContainer" class="nav-container">
+        <nav class="nav-bar">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#"> Pages</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Portfolio</a>
+            </li>
+            <li class="nav-item blog">
+              <a class="nav-link" href="#"> Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link-search" href="#">
+                <img src="./assets/img/search-icon.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <div class="header-content">
-        <div class="header-text-container header-card">
+        <div class="header-text-container">
           <h1>uniquepeople.sk</h1>
 
           <p>
@@ -36,13 +53,15 @@
             industry. Lorem Ipsum has been the industry's standard dummy text
           </p>
 
-          <button class="read-more">
-            Read more
-            <img src="./assets/img/download.svg" alt="" title="Read More" />
-          </button>
+          <div class="button-container">
+            <button class="read-more">
+              Read more
+              <img src="./assets/img/download.svg" alt="" title="Read More" />
+            </button>
+          </div>
         </div>
 
-        <div class="header-figure-container header-card">
+        <div class="header-figure-container">
           <img src="./assets/img/Group 1948.svg" alt="" />
         </div>
       </div>
@@ -50,7 +69,19 @@
       <img class="idk" src="./assets/img/idk.svg" alt="" />
     </header>
     <main class="main-content">
-      <section class="services"></section>
+      <section class="services">
+        <h2>Services</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry
+        </p>
+        <div class="services-slider">
+          <div class="services-slide-card"></div>
+          <div class="services-slide-card"></div>
+          <div class="services-slide-card"></div>
+          <div class="services-slide-card"></div>
+        </div>
+      </section>
       <a href="#">
         <section class="lets-started" href="#">
           <div class="started-content">
@@ -114,7 +145,6 @@
                 text ever since the 1500s.Lorem Ipsum is simply dummy text of
                 the printing and typesetting industry. Lorem Ipsum is simply
                 dummy text of the printing and typesetting industry.
-                <img src="./assets/img/left-quote.svg" alt="" />
               </p>
             </div>
           </div>
@@ -129,7 +159,7 @@
 
           <div class="form-wrap">
             <div class="input-wrap">
-              <select class="input" id="cars" name="cars">
+              <select class="input" id="cars" name="cars" required>
                 <option value="">Subject</option>
                 <option value="saab">Saab</option>
                 <option value="fiat">Fiat</option>
@@ -164,51 +194,63 @@
       </section>
 
       <footer class="footer">
-        <div class="footer-container">
-          <div class="address footer-card">
-            <h3><a href="#">Logo.co</a></h3>
-            <ul>
-              <li>Adress: 135 Barnard St.Brooklyn</li>
-              <li>NY 10036, United States</li>
-              <li>Phone: 1-400-123-1234</li>
-              <li>Email: example@creativelab.com</li>
-            </ul>
+        <div class="footer-arrow">
+          <img src="./assets/img/icons8-arrow-down-64.png" alt="" class="f-arrow" title="More Address">
+        </div>
+        <div class="footer-container ">
+          <div class="footer-content-1">
+            <div class="address footer-card">
+              <h3><a href="#">Logo.co</a></h3>
+              <ul>
+                <li>Adress: 135 Barnard St.Brooklyn</li>
+                <li>NY 10036, United States</li>
+                <li><a class="tel" href="tel:1-400-123-1234">Phone: 1-400-123-1234</a></li>
+                <li><a class="email" href="mailto:example@creativelab.com"
+                  >Email: example@creativelab.com</a
+                ></li>
+              
+              </ul>
+            </div>
+            <div class="footer-services footer-card">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Apps Developer</a></li>
+                <li><a href="#">Graphic Designer</a></li>
+                <li><a href="#">Web Developer</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">IOS Developer</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="footer-services footer-card">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="#">Apps Developer</a></li>
-              <li><a href="#">Graphic Designer</a></li>
-              <li><a href="#">Web Developer</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">IOS Developer</a></li>
-            </ul>
-          </div>
-          <div class="links footer-card">
-            <h3>Links</h3>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Sign In</a></li>
-            </ul>
-          </div>
-          <div class="get-in-touch footer-card">
-            <h3>Get In Touch</h3>
-            <ul>
-              <li>
-                <a href="#"><img src="./assets/img/facebook-f.svg" alt="" /></a>
-              </li>
-              <li>
-                <a href="#"
-                  ><img src="./assets/img/linkedin-in.svg" alt=""
-                /></a>
-              </li>
-              <li>
-                <a href="#"><img src="./assets/img/twitter.svg" alt="" /></a>
-              </li>
-            </ul>
+          <div class="footer-content-2">
+            <div class="links footer-card">
+              <h3>Links</h3>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Sign In</a></li>
+              </ul>
+            </div>
+            <div class="get-in-touch footer-card">
+              <h3>Get In Touch</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><img src="./assets/img/facebook-f.svg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="./assets/img/linkedin-in.svg" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="./assets/img/twitter.svg" alt="" /></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

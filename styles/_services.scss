@@ -1,7 +1,41 @@
-.services{
-    position: relative;
-    height: 1050px;
-    width: 100%;
-    background-color: #fff;
+.services {
+  position: relative;
+  min-height: 1050px;
+  width: 71%;
+  border: 3px solid red;
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    font-size: 55px;
+    font-family: "nunito-bold";
+    margin-bottom: 100px;
+  }
 
+  p {
+    font-size: 18px;
+    line-height: 30px;
+    max-width: 370px;
+    color: #656b8f;
+    border: 3px solid red;
+  }
+
+  .services-slider {
+    width: 100%;
+    height: 420px;
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    .services-slide-card {
+      width: 200px;
+      height: 403px;
+      border: 2px solid red;
+    }
+  }
 }
