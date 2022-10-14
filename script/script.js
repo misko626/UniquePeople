@@ -104,7 +104,7 @@ let navigationTime = true;
 function swiperGo() {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
-    spaceBetween: 25,
+    spaceBetween: 20,
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
@@ -183,21 +183,32 @@ function renderData(data) {
   swiperContainer.innerHTML = htmlSwiperContainerCards;
 }
 
-
-
 window.addEventListener("scroll", appearElement);
 
 function appearElement() {
   //screen sroll value
   const screenPosition = (window.innerHeight / 2) * 1.3;
+  const servicesLogo = document.querySelector(".services-logo");
+  const servicesHeading = document.querySelector(".services-heading");
+  const servicesSlider = document.querySelector(".swiper");
+  const servicesParagraph = document.querySelector(".services-paragraph");
 
-  //progress apear
-  const cards = document.querySelectorAll(".card");
+  const logoPosition = servicesLogo.getBoundingClientRect().top;
+  const headingPosition = servicesHeading.getBoundingClientRect().top;
+  const sliderPosition = servicesSlider.getBoundingClientRect().top;
+  const paragraphPosition = servicesParagraph.getBoundingClientRect().top;
 
-  for (let card of cards) {
-    const cardPosition = card.getBoundingClientRect().top;
-    if (cardPosition < screenPosition) {
-      card.classList.add("appear-element");
-    }
+  if (logoPosition < screenPosition) {
+    servicesLogo.classList.add("appear-logo");
+  }
+
+  if (headingPosition < screenPosition) {
+    servicesHeading.classList.add("appear-heading");
+  }
+  if (sliderPosition < screenPosition) {
+    servicesSlider.classList.add("appear-slider");
+  }
+  if (paragraphPosition < screenPosition) {
+    servicesParagraph.classList.add("appear-paragraph");
   }
 }

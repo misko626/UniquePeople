@@ -342,26 +342,29 @@
 .services {
   position: relative;
   min-height: 1050px;
-  width: 60%;
+  width: 71%;
   margin: auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0 100px;
 }
 @media (max-width: 1560px) {
   .services {
     width: 95%;
+    padding: 0;
   }
 }
-.services h2 {
+.services .services-heading {
   font-size: 55px;
   font-family: "nunito-bold";
   margin-bottom: 80px;
+  opacity: 0;
 }
 @media (max-width: 576px) {
-  .services h2 {
+  .services .services-heading {
     font-size: 35px;
     margin-bottom: 30px;
   }
@@ -378,10 +381,15 @@
     margin-bottom: 3px;
   }
 }
+.services .services-paragraph {
+  opacity: 0;
+}
 .services .services-logo {
   position: absolute;
   top: 10%;
   left: 10px;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 .services .services-slider {
   width: 100%;
@@ -394,7 +402,7 @@
 .services .services-slider .swiper {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 0%;
 }
 .services .services-slider .swiper .swiper-wrapper .swiper-slide {
   text-align: center;
@@ -482,6 +490,73 @@
      object-fit: cover;
 }
 
+.appear-logo {
+  -webkit-animation: logo-animation 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: logo-animation 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.appear-heading {
+  -webkit-animation: pop-in 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: pop-in 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  opacity: 1;
+}
+
+.appear-slider {
+  -webkit-animation: services-slider-appear 1.5s both;
+          animation: services-slider-appear 1.5s both;
+  opacity: 1;
+}
+
+.appear-paragraph {
+  -webkit-animation: logo-animation 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: logo-animation 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@-webkit-keyframes logo-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes logo-animation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes services-slider-appear {
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+@keyframes services-slider-appear {
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
 a {
   text-decoration: none;
 }
