@@ -52,6 +52,7 @@
 }
 .header .nav-container-mobile .nav-bar .nav-list {
   list-style: none;
+  line-height: 30px;
 }
 .header .nav-container-mobile .nav-bar .blog {
   margin-bottom: 200px;
