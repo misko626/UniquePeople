@@ -104,6 +104,10 @@
           padding: 0px;
         }
 
+        @include mobile {
+          margin-bottom: 50px;
+        }
+
         img {
           position: absolute;
           top: -30px;

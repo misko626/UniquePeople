@@ -9,15 +9,15 @@ $gradient-color: #8cc63f;
   align-items: center;
   justify-content: center;
 
-  @include large{
+  @include large {
     padding: 100px 0 200px 0;
   }
 
-  @include tablet{
+  @include tablet {
     padding: 100px 0 150px 0;
   }
 
-  @include mobile{
+  @include mobile {
     padding: 100px 0 100px 0;
   }
 
@@ -27,25 +27,26 @@ $gradient-color: #8cc63f;
     color: $gradient-color;
     span {
       border-bottom: 3px solid $gradient-color;
+      color: $gradient-color;
     }
   }
 
   .form_form {
     width: 30%;
 
-    @include large{
+    @include large {
       width: 40%;
     }
 
-    @include desktop{
+    @include desktop {
       width: 50%;
     }
 
-    @include tablet{
+    @include tablet {
       width: 60%;
     }
 
-    @include mobile{
+    @include mobile {
       width: 90%;
     }
   }

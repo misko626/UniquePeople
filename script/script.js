@@ -1,19 +1,3 @@
-const data = document.getElementById("data");
-
-// fetch("https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c")
-//   .then((response) => response.json())
-//   .then((json) => console.log(JSON.stringify(json)));
-
-fetch(`https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c`)
-  .then((res) => {
-    //console.log(res);
-    if (!res.ok) throw new Error(`Problem with Geocoding ${res.status}`);
-    return res.json();
-  })
-  .then((data) => {
-    console.log(data);
-  });
-
 //form validation
 
 const form = document.getElementById("form");
@@ -101,11 +85,116 @@ const footerArrow = document.querySelector(".f-arrow");
 const footerContainer = document.querySelector(".footer-container");
 let isFooterOpen = false;
 footerArrow.addEventListener("click", () => {
-  
-  if(!isFooterOpen) {
+  if (!isFooterOpen) {
     footerContainer.style.height = "100%";
-  } else{
+  } else {
     footerContainer.style.height = "0";
   }
   isFooterOpen = isFooterOpen === false ? true : false;
 });
+
+/*
+ *Slider
+ */
+let navigationTime = true;
+
+function swiperGo(){
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 25,
+    slidesPerGroup: 1,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    centerSlide: "true",
+    fade: "true",
+    grabCursor: "true",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 5000,
+    },
+  
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      500: {
+        slidesPerView: 2,
+      },
+      800: {
+        slidesPerView: 3,
+      },
+      1100: {
+        slidesPerView: 4,
+      },
+    },
+  });
+}
+
+
+
+const data = document.getElementById("data");
+
+// fetch("https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c")
+//   .then((response) => response.json())
+//   .then((json) => console.log(JSON.stringify(json)));
+
+fetch(`https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c`)
+  .then((res) => {
+    //console.log(res);
+    if (!res.ok) throw new Error(`Problem with API ${res.status}`);
+    return res.json();
+  })
+  .then((data) => {
+    renderData(data.data);
+    swiperGo();
+  });
+
+function renderData(data) {
+ 
+  let htmlSwiperContainerCards = "";
+  console.log(data);
+  const swiperContainer = document.getElementById("swiperContainer");
+  for (let i = 0; i < data.length; i++) {
+   
+    console.log(i);
+    htmlSwiperContainerCards += `<div class="swiper-slide">
+    <img
+      class="slide-image"
+      src="${data[i].image}"
+      alt=""
+    />
+
+    <h3 class="slide-heading">${data[i].title}</h3>
+    <p class="slide-paragraph">
+      ${(data[i].content).split(' ').slice(0, 10).join(' ')} ...
+    </p>
+    <button class="slide-button">
+      More <img src="./assets/img/download.svg" alt="" />
+    </button>
+  </div>`;
+    
+    
+  }
+  swiperContainer.innerHTML = htmlSwiperContainerCards;
+  
+}
+
+`<div class="swiper-slide">
+<img
+  class="slide-image"
+  src="./assets/img/app-layers.svg"
+  alt=""
+/>
+
+<h3 class="slide-heading">Expand Your Reach</h3>
+<p class="slide-paragraph">
+  Lorem Ipsum is simply dummy the printing and typesetting and
+  Lorem Ipsum has been the.
+</p>
+<button class="slide-button">
+  More <img src="./assets/img/download.svg" alt="" />
+</button>
+</div>`;

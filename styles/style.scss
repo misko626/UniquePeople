@@ -14,14 +14,17 @@
 @import "font";
 
 //colors
-$base-color: #c6538c;
-$border-dark: rgba($base-color, 0.88);
+$blue-color: #0161cd;
+$dark-color: #0c2533;
+$gradient-color: #8cc63f;
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "nunito-medium";
+  color: $dark-color;
 }
 
 body {

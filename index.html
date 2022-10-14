@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <!-- Swiper CSS  -->
+
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
   </head>
@@ -75,11 +77,111 @@
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry
         </p>
+
         <div class="services-slider">
-          <div class="services-slide-card"></div>
-          <div class="services-slide-card"></div>
-          <div class="services-slide-card"></div>
-          <div class="services-slide-card"></div>
+          <div class="swiper mySwiper">
+            <div id="swiperContainer" class="swiper-wrapper">
+              
+              <!-- <div class="swiper-slide">
+                <img
+                  class="slide-image"
+                  src="./assets/img/app-layers.svg"
+                  alt=""
+                />
+
+                <h3 class="slide-heading">Expand Your Reach</h3>
+                <p class="slide-paragraph">
+                  Lorem Ipsum is simply dummy the printing and typesetting and
+                  Lorem Ipsum has been the.
+                </p>
+                <button class="slide-button">
+                  More <img src="./assets/img/download.svg" alt="" />
+                </button>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slide-image"
+                  src="./assets/img/app-layers.svg"
+                  alt=""
+                />
+
+                <h3 class="slide-heading">Expand Your Reach</h3>
+                <p class="slide-paragraph">
+                  Lorem Ipsum is simply dummy the printing and typesetting and
+                  Lorem Ipsum has been the.
+                </p>
+                <button class="slide-button">
+                  More <img src="./assets/img/download.svg" alt="" />
+                </button>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slide-image"
+                  src="./assets/img/app-layers.svg"
+                  alt=""
+                />
+
+                <h3 class="slide-heading">Expand Your Reach</h3>
+                <p class="slide-paragraph">
+                  Lorem Ipsum is simply dummy the printing and typesetting and
+                  Lorem Ipsum has been the.
+                </p>
+                <button class="slide-button">
+                  More <img src="./assets/img/download.svg" alt="" />
+                </button>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slide-image"
+                  src="./assets/img/app-layers.svg"
+                  alt=""
+                />
+
+                <h3 class="slide-heading">Expand Your Reach</h3>
+                <p class="slide-paragraph">
+                  Lorem Ipsum is simply dummy the printing and typesetting and
+                  Lorem Ipsum has been the.
+                </p>
+                <button class="slide-button">
+                  More <img src="./assets/img/download.svg" alt="" />
+                </button>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slide-image"
+                  src="./assets/img/app-layers.svg"
+                  alt=""
+                />
+
+                <h3 class="slide-heading">Expand Your Reach</h3>
+                <p class="slide-paragraph">
+                  Lorem Ipsum is simply dummy the printing and typesetting and
+                  Lorem Ipsum has been the.
+                </p>
+                <button class="slide-button">
+                  More <img src="./assets/img/download.svg" alt="" />
+                </button>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="slide-image"
+                  src="./assets/img/app-layers.svg"
+                  alt=""
+                />
+
+                <h3 class="slide-heading">Expand Your Reach</h3>
+                <p class="slide-paragraph">
+                  Lorem Ipsum is simply dummy the printing and typesetting and
+                  Lorem Ipsum has been the.
+                </p>
+                <button class="slide-button">
+                  More <img src="./assets/img/download.svg" alt="" />
+                </button>
+              </div> -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
         </div>
       </section>
       <a href="#">
@@ -161,9 +263,9 @@
             <div class="input-wrap">
               <select class="input" id="cars" name="cars" required>
                 <option value="">Subject</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
+                <option value="saab">WEB</option>
+                <option value="fiat">FINANCES</option>
+                <option value="audi">SCHOOLES</option>
               </select>
             </div>
 
@@ -195,20 +297,30 @@
 
       <footer class="footer">
         <div class="footer-arrow">
-          <img src="./assets/img/icons8-arrow-down-64.png" alt="" class="f-arrow" title="More Address">
+          <img
+            src="./assets/img/icons8-arrow-down-64.png"
+            alt=""
+            class="f-arrow"
+            title="More Address"
+          />
         </div>
-        <div class="footer-container ">
+        <div class="footer-container">
           <div class="footer-content-1">
             <div class="address footer-card">
               <h3><a href="#">Logo.co</a></h3>
               <ul>
                 <li>Adress: 135 Barnard St.Brooklyn</li>
                 <li>NY 10036, United States</li>
-                <li><a class="tel" href="tel:1-400-123-1234">Phone: 1-400-123-1234</a></li>
-                <li><a class="email" href="mailto:example@creativelab.com"
-                  >Email: example@creativelab.com</a
-                ></li>
-              
+                <li>
+                  <a class="tel" href="tel:1-400-123-1234"
+                    >Phone: 1-400-123-1234</a
+                  >
+                </li>
+                <li>
+                  <a class="email" href="mailto:example@creativelab.com"
+                    >Email: example@creativelab.com</a
+                  >
+                </li>
               </ul>
             </div>
             <div class="footer-services footer-card">
@@ -255,10 +367,14 @@
         </div>
 
         <div class="copyright">
-          <p>© Copyright 2020 Creative . X Design by<a href="#">Sumon</a></p>
+          <p>© Copyright 2020 Creative . X Design by <a href="#">Sumon</a></p>
         </div>
       </footer>
     </main>
-    <script src="./script/script.js"></script>
   </body>
+  <!-- Swiper -->
+
+  <script src="./script/swiper-bundle.min.js"></script>
+  <!-- JS Script -->
+  <script src="./script/script.js"></script>
 </html>
