@@ -1,0 +1,11 @@
+Dobrý deň. 
+
+Posielam linky na vypracované zadanie. 
+
+Link Git (public repository): https://github.com/misko626/UniquePeople.git
+
+Nahratý web na Netlify (ak to je problém, že som to tam dal, tak to zmazem): https://illustrious-yeot-9359da.netlify.app
+
+PS: Mám v pláne dorobiť aj animácie. 
+
+S pozdravom Michal Popovič.

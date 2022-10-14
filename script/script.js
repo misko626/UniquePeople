@@ -182,3 +182,22 @@ function renderData(data) {
   }
   swiperContainer.innerHTML = htmlSwiperContainerCards;
 }
+
+
+
+window.addEventListener("scroll", appearElement);
+
+function appearElement() {
+  //screen sroll value
+  const screenPosition = (window.innerHeight / 2) * 1.3;
+
+  //progress apear
+  const cards = document.querySelectorAll(".card");
+
+  for (let card of cards) {
+    const cardPosition = card.getBoundingClientRect().top;
+    if (cardPosition < screenPosition) {
+      card.classList.add("appear-element");
+    }
+  }
+}
