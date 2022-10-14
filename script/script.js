@@ -1,8 +1,9 @@
-//form validation
+/*
+ * Form validation
+ */
 
 const form = document.getElementById("form");
 const email = document.getElementById("email");
-const telNum = document.getElementById("tel");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -87,8 +88,10 @@ let isFooterOpen = false;
 footerArrow.addEventListener("click", () => {
   if (!isFooterOpen) {
     footerContainer.style.height = "100%";
+    footerArrow.style.transform = "rotate(180deg)";
   } else {
     footerContainer.style.height = "0";
+    footerArrow.style.transform = "rotate(0deg)";
   }
   isFooterOpen = isFooterOpen === false ? true : false;
 });
@@ -98,7 +101,7 @@ footerArrow.addEventListener("click", () => {
  */
 let navigationTime = true;
 
-function swiperGo(){
+function swiperGo() {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
     spaceBetween: 25,
@@ -115,7 +118,7 @@ function swiperGo(){
     autoplay: {
       delay: 5000,
     },
-  
+
     breakpoints: {
       0: {
         slidesPerView: 1,
@@ -133,13 +136,13 @@ function swiperGo(){
   });
 }
 
-
+/*
+ *Slider
+ */
 
 const data = document.getElementById("data");
 
-// fetch("https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c")
-//   .then((response) => response.json())
-//   .then((json) => console.log(JSON.stringify(json)));
+//fetching data from API endpoint
 
 fetch(`https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c`)
   .then((res) => {
@@ -148,17 +151,18 @@ fetch(`https://mocki.io/v1/08021574-f46d-4231-bca1-ffd6a3315b7c`)
     return res.json();
   })
   .then((data) => {
+    //render json data at FrontEnd
     renderData(data.data);
+    //calling swiper function
     swiperGo();
   });
 
+//fucntion for rendering data at FrontEnd
 function renderData(data) {
- 
   let htmlSwiperContainerCards = "";
   console.log(data);
   const swiperContainer = document.getElementById("swiperContainer");
   for (let i = 0; i < data.length; i++) {
-   
     console.log(i);
     htmlSwiperContainerCards += `<div class="swiper-slide">
     <img
@@ -169,32 +173,12 @@ function renderData(data) {
 
     <h3 class="slide-heading">${data[i].title}</h3>
     <p class="slide-paragraph">
-      ${(data[i].content).split(' ').slice(0, 10).join(' ')} ...
+      ${data[i].content.split(" ").slice(0, 10).join(" ")} ...
     </p>
     <button class="slide-button">
       More <img src="./assets/img/download.svg" alt="" />
     </button>
   </div>`;
-    
-    
   }
   swiperContainer.innerHTML = htmlSwiperContainerCards;
-  
 }
-
-`<div class="swiper-slide">
-<img
-  class="slide-image"
-  src="./assets/img/app-layers.svg"
-  alt=""
-/>
-
-<h3 class="slide-heading">Expand Your Reach</h3>
-<p class="slide-paragraph">
-  Lorem Ipsum is simply dummy the printing and typesetting and
-  Lorem Ipsum has been the.
-</p>
-<button class="slide-button">
-  More <img src="./assets/img/download.svg" alt="" />
-</button>
-</div>`;
